@@ -8,12 +8,12 @@ Historical NVDA price data is downloaded using Yahoo Finance. The model uses **A
 
 ## Feature Engineering
 To transform the time series into a supervised learning dataset, the project creates features designed to capture short-term trend, momentum, and volatility:
-- **Daily return (`ret1`)**
-- **Lagged returns (`ret_lag_1` to `ret_lag_5`)** to represent recent momentum
-- **Moving averages (5-day and 20-day)** to represent short vs. medium trend
-- **Momentum vs. 20-day average (`mom_20`)** to measure deviation from baseline
-- **Rolling volatility (`vol_20`)** to represent recent risk/variability
-- **RSI (14-day)** to capture overbought/oversold conditions
+- **Daily return**
+- **Lagged returns** to represent recent momentum
+- **Moving averages** to represent short vs. medium trend
+- **Momentum vs. 20-day average** to measure deviation from baseline
+- **Rolling volatility** to represent recent risk/variability
+- **RSI** to capture overbought/oversold conditions
 
 The **target** is defined as the **next-day return**, which makes the prediction task more realistic than fitting a trending price series directly
 
@@ -35,5 +35,4 @@ The project reports:
 - **Direction accuracy** (how often the model predicts up vs. down correctly)
 
 ## Next-Day Prediction
-After training, the Random Forest model is used to estimate the next-day return using the most recent feature row. This predicted return is converted into a next-day price estimate:
-- `predicted_price = latest_price * (1 + predicted_return)`
+After training, the Random Forest model is used to estimate the next-day return using the most recent feature row. This predicted return is converted into a next-day price estimate
