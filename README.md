@@ -1,4 +1,4 @@
-# Stock-Predictor-Using-ML
+# Stock Predictor Using ML
 
 ## Introduction
 In this project I built a stock prediction pipeline that uses classic machine learning to estimate **NVIDIA (NVDA)’s next-day return** (percentage change). Instead of predicting the raw closing price directly, the model predicts tomorrow’s return using price-based features, then converts that return into a next-day price estimate for interpretability. This project demonstrates an end-to-end workflow: data collection, feature engineering, model training, evaluation on unseen data, and a final next-day prediction.
